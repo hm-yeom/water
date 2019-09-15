@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>하루 물 섭취 권장량 계산</title>
+	<style type="text/css">
+		h1{font-size: 25px,; 
+			letter-spacing: -1px;
+			margin-top: 20px;}
+		h2{font-size: 18px;
+				margin-top: 20px;
+				 color:blue;}
+		h3{font-size: 15px;
+				margin-top: -20px;}
+		h4{font-size: 18px;}
+		#myheight, #myweight{width:200px; margin-left: 20px;}
+		#myname{ font-size: 15px; 
+					padding: 10px;
+					background:	#cce6ff;
+					color: #00264d;
+					border: none;
+					box-shadow: 0px 0px 5px inset;
+					display: block;
+					border-radius: 4px;
+					margin-top: -10px;
+					margin-left: 380px; 
+				}	
+
+	</style>
+</head>
+
+<body>
+<h1>하루 물 섭취 권장량을 계산해 볼까요?</h1>
+	<input type="text" placeholder="이름" id="myname" size="12">
+	<br><br>
+
+	<h2>체중</h2>
+	<h3>20kg<input type="range" id="myweight" min="20" max="100">100kg
+	<div id="wmo" style=" margin-left: 140px;">75kg</div></h3>
+	<br><br>
+
+	<h4><div id="monitor">님, 당신의 하루 물 섭취 권장량은 2,250mL입니다.</div></h4>
+
+<script type="text/javascript">
+		myweight.oninput = function(){
+			wmo.innerHTML = myweight.value;
+			var water = (myweight.value)*30;
+			monitor.innerHTML = 
+			myname.value + "님, 당신의 하루 물 섭취권장량은" + water + "mL 입니다.";
+		}
+
+	</script>	
+</body>
+</html>
